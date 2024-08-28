@@ -1,0 +1,26 @@
+POST http://localhost:5000/song/create
+Content-Type: application/json
+
+{
+     "title": "Country Road",
+     "artist": "Don Williams",
+     "album": "you",
+      "genre": "country"
+}
+###
+
+GET http://localhost:5000/song/allSongs
+###
+
+PUT http://localhost:5000/song/66cf309c08185ccf3e13fd65
+Content-Type: application/json
+
+{
+    "album":"yast"
+}
+###
+
+DELETE http://localhost:5000/song/66cf4b4140935c857343f331
+###
+
+GET http://localhost:5000/song/statistics
