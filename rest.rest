@@ -2,10 +2,10 @@ POST http://localhost:5000/song/create
 Content-Type: application/json
 
 {
-     "title": "Country Road",
-     "artist": "Don Williams",
-     "album": "you",
-      "genre": "country"
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "genre": "Grunge"
 }
 ###
 
@@ -16,7 +16,7 @@ PUT http://localhost:5000/song/66cf309c08185ccf3e13fd65
 Content-Type: application/json
 
 {
-    "album":"yast"
+    "title":"Jah"
 }
 ###
 

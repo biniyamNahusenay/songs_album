@@ -56,8 +56,10 @@ const songSlice = createSlice({
         },
         updateSongSuccess: (state, action: PayloadAction<Songs>) => {
             state.loading = false;
-            state.songs = state.songs.map((song) => song._id === action.payload._id ? action.payload : song);
-        },
+            state.songs = state.songs.map((song) =>
+              song._id === action.payload._id ? action.payload : song
+            );
+          },
         updateSongFailure: (state, action: PayloadAction<string>) => {
             state.error = action.payload;
             state.loading = false;
@@ -67,7 +69,7 @@ const songSlice = createSlice({
         },
         deleteSongSuccess: (state, action: PayloadAction<string>) => {
             state.loading = false;
-            state.songs = state.songs.filter((song) => song._id!== action.payload);
+            state.songs = state.songs.filter((song) => song._id !== action.payload);
         },
         deleteSongFailure: (state, action: PayloadAction<string>) => {
             state.error = action.payload;

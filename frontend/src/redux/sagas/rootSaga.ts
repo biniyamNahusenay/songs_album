@@ -1,7 +1,7 @@
 import { all, fork } from 'redux-saga/effects';
-import { watchSongSaga } from './songSaga';
+import { watchDeleteSong, watchSongSaga, watchUpdateSongSaga } from './songSaga';
 // import { watchStatsSaga } from './statsSaga';
 
 export default function* rootSaga() {
-  yield all([fork(watchSongSaga)]);
+  yield all([fork(watchSongSaga),fork(watchUpdateSongSaga),fork(watchDeleteSong)]);
 }
