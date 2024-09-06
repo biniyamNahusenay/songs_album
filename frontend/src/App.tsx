@@ -4,7 +4,6 @@ import Navbar from './components/Navbar'
 import CreateSong from './pages/CreateSong'
 import SongStatistics from "./pages/SongStatistics"
 
-
 function App() {
   return (
     <>

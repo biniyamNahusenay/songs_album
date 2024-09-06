@@ -4,7 +4,7 @@ import {fetchSongsRequest,fetchSongsSuccess,fetchSongsFailure,createSongStart,cr
     createSongFailure,updateSongStart,updateSongSuccess,updateSongFailure,deleteSongRequest,
     deleteSongSuccess,deleteSongFailure,filterSongsByGenres} from '../slices/songSlice'
 import { Song , Songs} from '../slices/songSlice'
-import { deleteSong, getSongList, updateSong } from '../api/songApi'
+import { createSong, deleteSong, getSongList, updateSong } from '../api/songApi'
 import { PayloadAction } from '@reduxjs/toolkit'
 
 function* fetchSongsSaga():Generator<any, void, Songs[]>{
@@ -66,3 +66,18 @@ function* updateSongSaga(action: PayloadAction<Songs>): Generator<any, void, Son
   export function* watchDeleteSong() {
     yield takeLatest(deleteSongRequest.type, deleteSongSaga);
   }
+
+  function* createSongSaga(action: PayloadAction<Songs>): Generator<any, void, Songs> {
+    try {
+      const newSong = yield call(createSong, action.payload);
+      yield put(createSongSuccess(newSong)); // Dispatch success action
+    } catch (error) {
+      yield put(createSongFailure('Failed to create song')); // Dispatch failure action
+    }
+  }
+  
+  // Watcher Saga for creating a song
+  export function* watchCreateSongSaga() {
+    yield takeLatest(createSongStart.type, createSongSaga);
+  }
+

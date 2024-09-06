@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 20px;
   max-width: 1100px;
   margin: 0 auto;
-  margin-top:30px;
+  margin-top:14px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -89,18 +89,18 @@ const PaginationContainer = styled.div`
   margin-top: 20px;
 `;
 
-const PaginationButton = styled.button<{ active: boolean }>`
+const PaginationButton = styled.button<{ $active: boolean }>`
   padding: 8px 12px;
   margin: 0 4px;
   border: 1px solid #ddd;
-  background-color: ${({ active }) => (active ? "#4caf50" : "#fff")};
-  color: ${({ active }) => (active ? "#fff" : "#333")};
+  background-color: ${({ $active }) => ($active ? "#4caf50" : "#fff")};
+  color: ${({ $active }) => ($active ? "#fff" : "#333")};
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: ${({ active }) => (active ? "#4caf50" : "#ddd")};
+    background-color: ${({ $active }) => ($active ? "#4caf50" : "#ddd")};
   }
 `;
 
@@ -317,7 +317,7 @@ const SongTable: React.FC = () => {
             <PaginationButton
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
-              active={index + 1 === currentPage}
+              $active={index + 1 === currentPage}
             >
               {index + 1}
             </PaginationButton>
