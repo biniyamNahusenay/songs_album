@@ -129,32 +129,32 @@ const SongTable: React.FC = () => {
     setEditableSongGenre(genre);
   };
 
-  const updateHandler = async (id: string) => {
-    try {
-      const updatedSong = {
-        _id: id,
-        title: editableSongTitle,
-        artist: editableSongArtist,
-        album: editableSongAlbum,
-        genre: editableSongGenre,
-      };
-      // console.log("Updating song:", updatedSong);
+const updateHandler = async (id: string) => {
+  try {
+    const updatedSong = {
+      _id: id,
+      title: editableSongTitle,
+      artist: editableSongArtist,
+      album: editableSongAlbum,
+      genre: editableSongGenre,
+    };
+    // console.log("Updating song:", updatedSong);
 
-      await dispatch(updateSongStart(updatedSong)); // Dispatch the action to start the update process
+     dispatch(updateSongStart(updatedSong)); // Dispatch the action to start the update process
 
-      setEditableSongId(null);
-      setEditableSongTitle("");
-      setEditableSongArtist("");
-      setEditableSongAlbum("");
-      setEditableSongGenre("");
-    } catch (error: unknown) {
-      if (error instanceof AxiosError) {
-        toast.error(error.response?.data?.message || error.message);
-      } else {
-        toast.error("An error occurred while updating the song.");
-      }
+    setEditableSongId(null);
+    setEditableSongTitle("");
+    setEditableSongArtist("");
+    setEditableSongAlbum("");
+    setEditableSongGenre("");
+  } catch (error: unknown) {
+    if (error instanceof AxiosError) {
+      toast.error(error.response?.data?.message || error.message);
+    } else {
+      toast.error("An error occurred while updating the song.");
     }
-  };
+  }
+};
 
   const deleteHandler = async (id:string)=>{
     console.log(id)
