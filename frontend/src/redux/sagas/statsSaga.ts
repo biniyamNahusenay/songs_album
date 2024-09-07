@@ -7,7 +7,7 @@ import {
   StatisticsState,
 } from '../slices/statSlice'
 
-function* fetchStatisticsSaga():Generator<any, void> {
+function* fetchStatisticsSaga():Generator<any, void, StatisticsState> {
   try {
     const data:StatisticsState = yield call(getStatisticsApi);
     yield put(fetchStatisticsSuccess(data));
