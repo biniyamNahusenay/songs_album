@@ -4,11 +4,12 @@ import {
   fetchStatisticsStart,
   fetchStatisticsSuccess,
   fetchStatisticsFailure,
+  StatisticsState,
 } from '../slices/statSlice'
 
 function* fetchStatisticsSaga():Generator<any, void> {
   try {
-    const data = yield call(getStatisticsApi);
+    const data:StatisticsState = yield call(getStatisticsApi);
     yield put(fetchStatisticsSuccess(data));
   } catch (error) {
     if (error instanceof Error) {
