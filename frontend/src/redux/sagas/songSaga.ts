@@ -2,8 +2,8 @@ import {call,put,takeLatest} from 'redux-saga/effects'
 // import axios, { AxiosResponse } from 'axios'
 import {fetchSongsRequest,fetchSongsSuccess,fetchSongsFailure,createSongStart,createSongSuccess,
     createSongFailure,updateSongStart,updateSongSuccess,updateSongFailure,deleteSongRequest,
-    deleteSongSuccess,deleteSongFailure,filterSongsByGenres} from '../slices/songSlice'
-import { Song , Songs} from '../slices/songSlice'
+    deleteSongSuccess,deleteSongFailure} from '../slices/songSlice'
+import { Songs} from '../slices/songSlice'
 import { createSong, deleteSong, getSongList, updateSong } from '../api/songApi'
 import { PayloadAction } from '@reduxjs/toolkit'
 
