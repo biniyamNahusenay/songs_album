@@ -22,7 +22,7 @@ interface AlbumsPerArtist {
   Albums: string[];
 }
 
-interface StatisticsState {
+export interface StatisticsState {
   totalSongs: number;
   totalArtists: number;
   totalAlbums: number;
