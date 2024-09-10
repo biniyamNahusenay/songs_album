@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
     res.status(201).json({ message: "Server is  up and running" });
   });
 
+  //pass = h6lsShZe2aOTEyTl and username = bininahu12
 const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname,'/frontend/dist')))

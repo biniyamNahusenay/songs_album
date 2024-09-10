@@ -2,10 +2,11 @@ POST http://localhost:5000/song/create
 Content-Type: application/json
 
 {
-    "title": "Smells Like Teen Spirit",
-    "artist": "Nirvana",
-    "album": "Nevermind",
-    "genre": "Grunge"
+   
+"title":"Bohemian Rhapsody",
+"artist":"Queen",
+"album":"A Night at The Opera",
+"genre":"Rock"
 }
 ###
 
